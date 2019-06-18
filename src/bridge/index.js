@@ -6,12 +6,14 @@ import { WalletBridge } from './types'
 import LibcoreBridge from './LibcoreBridge'
 import EthereumJSBridge from './EthereumJSBridge'
 import RippleJSBridge from './RippleJSBridge'
+import QrlJSBridge from './QrlJSBridge'
 import makeMockBridge from './makeMockBridge'
 
 const perFamily = {
   bitcoin: LibcoreBridge,
   ripple: RippleJSBridge,
   ethereum: EthereumJSBridge,
+  qrl: QrlJSBridge,
   stellar: null,
 }
 if (USE_MOCK_DATA) {
@@ -19,6 +21,7 @@ if (USE_MOCK_DATA) {
   perFamily.bitcoin = mockBridge
   perFamily.ethereum = mockBridge
   perFamily.ripple = mockBridge
+  perFamily.qrl = mockBridge
 }
 export const getBridgeForCurrency = (currency: CryptoCurrency): WalletBridge<any> => {
   const bridge = perFamily[currency.family]
