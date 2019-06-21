@@ -10,6 +10,7 @@ import { createCustomErrorClass } from '@ledgerhq/errors'
 import { decodeAccountId } from '@ledgerhq/live-common/lib/account'
 import * as LibcoreBridge from './LibcoreBridge'
 import * as RippleJSBridge from './RippleJSBridge'
+import * as QrlJSBridge from './QrlJSBridge'
 import * as EthereumJSBridge from './EthereumJSBridge'
 
 // TODO as soon as it's in @ledgerhq/errors we can import it
@@ -30,6 +31,8 @@ export const getCurrencyBridge = (currency: CryptoCurrency): CurrencyBridge => {
       return EthereumJSBridge.currencyBridge
     case 'bitcoin':
       return LibcoreBridge.currencyBridge
+    case 'qrl':
+      return QrlJSBridge.currencyBridge
     default:
       return mockCurrencyBridge // fallback mock until we implement it all!
   }
@@ -49,6 +52,8 @@ export const getAccountBridge = (
       return RippleJSBridge.accountBridge
     case 'ethereum':
       return EthereumJSBridge.accountBridge
+    case 'qrl':
+      return QrlJSBridge.accountBridge
     default:
       throw new CurrencyNotSupported('currency not supported', {
         currencyName: mainAccount.currency.name,

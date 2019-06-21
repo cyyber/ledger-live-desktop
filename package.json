@@ -43,6 +43,8 @@
     "@ledgerhq/hw-app-btc": "^4.62.0",
     "@ledgerhq/hw-app-eth": "^4.62.0",
     "@ledgerhq/hw-app-xrp": "^4.62.0",
+    "@theqrl/hw-app-qrl": "^5.0.0",
+    "@theqrl/js-api-bridge": "^0.0.1",
     "@ledgerhq/hw-transport": "^4.62.0",
     "@ledgerhq/hw-transport-http": "^4.62.0",
     "@ledgerhq/hw-transport-node-hid": "^4.62.0",
