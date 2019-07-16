@@ -50,6 +50,7 @@ const Address = styled(Box).attrs({
   user-select: text;
   text-align: center;
   min-width: 320px;
+  word-break: break-all;
 `
 
 const CopyFeedback = styled(Box).attrs({
