@@ -49,6 +49,7 @@ export const Address = styled(Text).attrs({})`
   flex-wrap: wrap;
   padding: 4px;
   width: fit-content;
+  word-break: break-all;
 `
 
 export const GradientHover = styled(Box).attrs({
